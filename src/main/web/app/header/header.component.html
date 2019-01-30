@@ -1,0 +1,22 @@
+<header class="header-1">
+  <div class="branding">
+    <a routerLink="/" class="nav-link">
+      <clr-icon shape="map"></clr-icon>
+      <span class="title">Angular ArcGIS viewer</span>
+    </a>
+  </div>
+  <div class="header-nav">
+    <a routerLink="/map" class="nav-link"><span class="nav-text">Map</span></a>
+  </div>
+  <div class="header-actions">
+    <clr-dropdown>
+      <button class="nav-icon" clrDropdownTrigger>
+        <clr-icon shape="cog"></clr-icon>
+        <clr-icon shape="caret down"></clr-icon>
+      </button>
+      <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+        <a routerLink="/about" clrDropdownItem>About</a>
+      </clr-dropdown-menu>
+    </clr-dropdown>
+  </div>
+</header>

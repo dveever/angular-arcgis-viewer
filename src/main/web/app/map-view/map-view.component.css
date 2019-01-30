@@ -1,0 +1,14 @@
+.esri-view {
+  height: 100%;
+  outline: none;
+}
+
+.clr-row{
+  margin-right: 0;
+  margin-left: 0;
+}
+.clr-col{
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+  position: relative;
+}

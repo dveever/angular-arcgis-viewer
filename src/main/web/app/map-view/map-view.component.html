@@ -1,0 +1,52 @@
+<div class="clr-row">
+  <div class="clr-col">
+    <button class="btn btn-icon btn-sm" title="Print map" >
+      <clr-icon shape="printer"></clr-icon>
+    </button>
+    <button class="btn btn-icon btn-sm" title="Bookmarks" >
+      <clr-icon shape="pin"></clr-icon>
+    </button>
+    <clr-dropdown [clrCloseMenuOnItemClick]="true" >
+      <button type="button" class="btn btn-sm btn-outline-primary" clrDropdownTrigger>
+        <clr-icon shape="drag-handle"></clr-icon>
+        <clr-icon shape="caret down"></clr-icon>
+      </button>
+      <clr-dropdown-menu *clrIfOpen>
+        <label class="dropdown-header">Select element tools</label>
+        <button type="button" clrDropdownItem (click)="selectByRectangle()">
+          Select by rectangle
+        </button>
+        <button type="button" clrDropdownItem (click)="selectByPolygon()">
+          Select by polygon
+        </button>
+        <button type="button" clrDropdownItem (click)="selectByFreehand()">
+          Select by freehand
+        </button>
+        <div class="dropdown-divider"></div>
+        <button type="button" clrDropdownItem [style.color]="'red'" (click)="clearSelected()">
+          Clear selection
+        </button>
+      </clr-dropdown-menu>
+    </clr-dropdown>
+    <button class="btn btn-icon btn-sm" (click)="identityStart()" title="Identify" >
+      <clr-icon shape="info-standard" [style.color]="'black'"></clr-icon>
+    </button>
+    <button [attr.class]="showMeasureTool ? 'btn btn-primary btn-icon btn-sm' : 'btn btn-icon btn-sm'"
+            (click)="measureToolShow()" title="Measure tools" >
+      <clr-icon shape="ruler-pencil" ></clr-icon>
+    </button>
+
+    <button [attr.class]="showCoordinateTool
+                      ? 'btn btn-primary btn-icon btn-sm'
+                      : 'btn btn-icon btn-sm'"
+            (click)="coordinateToolShow()"
+            title="Get coordinate" >
+      <clr-icon shape="cursor-hand-click" ></clr-icon>
+    </button>
+  </div>
+</div>
+<div class="clr-row" [style.height.vh]="88">
+  <div class="clr-col"  [style.height]="'100%'">
+    <div #mapViewContainer></div>
+  </div>
+</div>

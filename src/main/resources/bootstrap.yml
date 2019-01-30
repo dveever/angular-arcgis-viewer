@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: angular-arcgis-viewer
+server:
+  port: 80
